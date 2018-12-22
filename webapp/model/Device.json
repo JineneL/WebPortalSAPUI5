@@ -1,0 +1,11 @@
+{
+	"Devices": [{
+		"id": "1ba8658d-6790-4583-8385-8127db95e1ee",
+		"name": "Temp sensor pi",
+		"deviceType": "376e53cf7f31520bc555"
+	}, {
+		"id": "e53b8447-ff7d-4a4f-8804-77cab19de6bc",
+		"name": "LED pi",
+		"deviceType": "8967c1180748411fc415"
+	}]
+}
