@@ -1,0 +1,59 @@
+<mvc:View controllerName="Portal.controller.View" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Wizard id="IoTPortalWizard" complete="wizardCompletedHandler">
+						<WizardStep id="FirstStep" title="{i18n>firstStepTitle}" validated="true">
+							<MessageStrip class="sapUiSmallMarginBottom" text="{i18n>firstStepMessage}" showIcon="true"/>
+							<Text class="sapUiSmallMarginBottom" text="{i18n>firstStepText}"/>
+						</WizardStep>
+						<WizardStep id="SecondStep" title="{i18n>secondStepTitle}" validated="true">
+							<Text class="sapUiSmallMarginBottom" text="{i18n>secondStepText}"/>
+							<List id="idList" items="{/Devices}" selectionChange="onSelectionChange" mode="MultiSelect" includeItemInSelection="true">
+								<infoToolbar>
+									<Toolbar visible="false" id="idInfoToolbar">
+										<Label id="idFilterLabel"/>
+									</Toolbar>
+								</infoToolbar>
+								<items>
+									<StandardListItem title="{name}" selected="true"/>
+								</items>
+							</List>
+							<Text class="sapUiSmallMarginBottom" text="{i18n>secondStepText2}"/>
+							<Image src="img/wiring.png" densityAware="false">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Image>
+						</WizardStep>
+						<WizardStep id="ThirdStep" title="{i18n>thirdStepTitle}" validated="true">
+							
+							<Text class="sapUiSmallMarginBottom" text="{i18n>thirdStepText1}"/>
+							<MessageStrip class="sapUiSmallMarginBottom" text="{i18n>thirdStepMessage1}" showIcon="false"/>
+							
+							<Text class="sapUiSmallMarginBottom" text="{i18n>thirdStepText2}"/>
+							<MessageStrip class="sapUiSmallMarginBottom" text="{i18n>thirdStepMessage2}" showIcon="false"/>
+							
+							<Text class="sapUiSmallMarginBottom" text="{i18n>thirdStepText3}"/>
+							<MessageStrip class="sapUiSmallMarginBottom" text="{i18n>thirdStepMessage3}" showIcon="false"/>
+							
+							<Text class="sapUiSmallMarginBottom" text="{i18n>thirdStepText4}"/>
+							<Button text="Download application.py" press="onDownload"/>
+						</WizardStep>
+						<WizardStep id="ForthStep" title="{i18n>forthStepTitle}" validated="true">
+							<Text class="sapUiSmallMarginBottom" text="{i18n>forthStepText}"/>
+						</WizardStep>
+						<WizardStep id="FifthStep" title="{i18n>fifthStepTitle}" validated="true">
+							<Text class="sapUiSmallMarginBottom" text="{i18n>fifthStepText}"/>
+							<Link text="BPMN Graphical Editor" 
+							      target="_blank" 
+							      href="https://demo.bpmn.io/s/start"/>
+						</WizardStep>
+					</Wizard>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
